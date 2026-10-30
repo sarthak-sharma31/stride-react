@@ -1,0 +1,29 @@
+# Hosting config for when the site is published (it is a single-page React app built by Vite).
+[build]
+  command = "node scripts/write-release.mjs && npx vite build"
+  publish = "dist"
+
+[[headers]]
+  for = "/download/*.apk"
+  [headers.values]
+    Content-Type = "application/vnd.android.package-archive"
+    Content-Disposition = "attachment; filename=StrideRewards.apk"
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/download/latest.json"
+  [headers.values]
+    Cache-Control = "no-cache"
+    Access-Control-Allow-Origin = "*"
+
+# The admin console is for the operator only; keep it out of search engines.
+[[headers]]
+  for = "/admin*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Every page is rendered by React; serve index.html for all routes (files above still win).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

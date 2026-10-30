@@ -1,0 +1,214 @@
+{
+  "websiteUrl": "https://striderewards.sornok.online",
+  "apiUrl": "https://striderewards-api.netlify.app/api",
+  "catalog": [
+    {
+      "id": "gplay-10",
+      "brand": "Google Play",
+      "title": "Google Play ₹10",
+      "points": 9000,
+      "valueMinor": 1000
+    },
+    {
+      "id": "gplay-25",
+      "brand": "Google Play",
+      "title": "Google Play ₹25",
+      "points": 20000,
+      "valueMinor": 2500
+    },
+    {
+      "id": "gplay-50",
+      "brand": "Google Play",
+      "title": "Google Play ₹50",
+      "points": 39000,
+      "valueMinor": 5000
+    },
+    {
+      "id": "gplay-100",
+      "brand": "Google Play",
+      "title": "Google Play ₹100",
+      "points": 76000,
+      "valueMinor": 10000
+    },
+    {
+      "id": "amazon-25",
+      "brand": "Amazon Pay",
+      "title": "Amazon Pay ₹25",
+      "points": 20000,
+      "valueMinor": 2500
+    },
+    {
+      "id": "amazon-50",
+      "brand": "Amazon Pay",
+      "title": "Amazon Pay ₹50",
+      "points": 39000,
+      "valueMinor": 5000
+    },
+    {
+      "id": "amazon-100",
+      "brand": "Amazon Pay",
+      "title": "Amazon Pay ₹100",
+      "points": 76000,
+      "valueMinor": 10000
+    },
+    {
+      "id": "flipkart-25",
+      "brand": "Flipkart",
+      "title": "Flipkart ₹25",
+      "points": 20000,
+      "valueMinor": 2500
+    },
+    {
+      "id": "flipkart-50",
+      "brand": "Flipkart",
+      "title": "Flipkart ₹50",
+      "points": 39000,
+      "valueMinor": 5000
+    },
+    {
+      "id": "flipkart-100",
+      "brand": "Flipkart",
+      "title": "Flipkart ₹100",
+      "points": 76000,
+      "valueMinor": 10000
+    },
+    {
+      "id": "ajio-50",
+      "brand": "AJIO",
+      "title": "AJIO ₹50",
+      "points": 39000,
+      "valueMinor": 5000
+    },
+    {
+      "id": "ajio-100",
+      "brand": "AJIO",
+      "title": "AJIO ₹100",
+      "points": 76000,
+      "valueMinor": 10000
+    },
+    {
+      "id": "ajio-250",
+      "brand": "AJIO",
+      "title": "AJIO ₹250",
+      "points": 185000,
+      "valueMinor": 25000
+    }
+  ],
+  "rules": {
+    "dailyCap": 300,
+    "milestonesPerDay": 15,
+    "milestonePoints": [
+      1,
+      8
+    ],
+    "bonusPoints": [
+      4,
+      10
+    ],
+    "habits": 5
+  },
+  "referral": {
+    "referrerPoints": 50,
+    "refereePoints": 25,
+    "qualifyingGoalDays": 3
+  },
+  "redemption": {
+    "minAccountAgeDays": 14,
+    "cooldownDays": 7
+  },
+  "policies": {
+    "rewards": {
+      "title": "Rewards Policy",
+      "sections": [
+        {
+          "heading": "What points are",
+          "body": "Points are a promotional loyalty currency. They are not money, have no cash value, cannot be transferred or sold, and do not represent a share of any revenue."
+        },
+        {
+          "heading": "How points are earned",
+          "body": "Points are awarded for reaching step milestones, bonus boxes, healthy habits, challenges and qualifying referrals. Values, milestones and limits are published in the app and may change."
+        },
+        {
+          "heading": "Limits and budget",
+          "body": "There is a per-user daily points limit and a program-wide daily budget set by the operator. When the budget is exhausted, earning may pause until it is replenished. The app remains usable while rewards are paused."
+        },
+        {
+          "heading": "Random rewards",
+          "body": "Each step milestone and bonus box awards a random number of points within the published range, decided by our server when you claim. Claiming requires an internet connection. Points obtained through tampering, automation, emulators, multiple accounts or other abuse may be withheld or reversed."
+        },
+        {
+          "heading": "Redemption",
+          "body": "Points can be exchanged for digital gift cards (currently India only). The points price of each card is shown in the app (for example 9,000 points for a ₹10 card); larger cards give more value per point, and each brand has its own minimum amount. Your points are reserved when you request a card. Every request is reviewed by hand, and the gift code is sent to the email you give, usually within 3 working days. A request may be declined, in which case the points are returned; you can cancel it while it is still requested."
+        },
+        {
+          "heading": "Redemption limits",
+          "body": "You can request rewards once your account is 14 days old. You can have one request in progress at a time and receive one reward every 7 days."
+        },
+        {
+          "heading": "Ad-unlocked rewards",
+          "body": "Habit rounds and bonus boxes are unlocked by watching a rewarded ad to the end. If no ad is available, try again later; the reward stays waiting for you that day."
+        },
+        {
+          "heading": "No guaranteed earnings",
+          "body": "Walking does not generate a fixed cash amount. We may change, suspend or end the program with notice in the app; available points will be honoured for a reasonable period as described in the Terms."
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "sections": [
+        {
+          "heading": "Account data",
+          "body": "Email address and optional display name, managed by our authentication provider (Firebase Authentication). If you continue with Google, we receive your name and email from Google. Passwords are never stored by us."
+        },
+        {
+          "heading": "Activity data",
+          "body": "Daily step totals read from your phone’s step counter with the Physical activity permission. We do not collect location, routes, heart rate or other health records. Optional height, weight and stride are used only for estimates."
+        },
+        {
+          "heading": "Rewards data",
+          "body": "Points transactions, claims, redemption requests and delivery email. Kept to operate the program and prevent fraud; financial records may be retained in anonymised form after deletion where required by law."
+        },
+        {
+          "heading": "Advertising",
+          "body": "The app shows ads from Unity Ads, including optional rewarded videos that unlock habit rounds and bonus boxes. If you allow personalised ads, Unity may use your device’s advertising ID to show more relevant ads; if not, you still see ads, but they are not personalised. Change this any time in Settings → Privacy & data. We never reward clicking on ads."
+        },
+        {
+          "heading": "Security signals",
+          "body": "A random install identifier and basic activity plausibility checks help detect abuse. We do not collect hardware identifiers."
+        },
+        {
+          "heading": "Your rights",
+          "body": "Export your data or delete your account at any time from Settings → Privacy & data. Deletion removes your profile, activity history and points."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "sections": [
+        {
+          "heading": "Eligibility",
+          "body": "You must meet the minimum age in your country and may hold one account. Rewards may be limited to certain regions."
+        },
+        {
+          "heading": "Fair use",
+          "body": "Do not use devices, scripts, emulators or other methods to simulate steps. We may suspend accounts that violate these rules."
+        },
+        {
+          "heading": "Health",
+          "body": "StrideRewards is not a medical device. Estimates of distance and calories are approximate. Consult a professional before starting a new exercise programme."
+        },
+        {
+          "heading": "Changes",
+          "body": "We may update these terms and the Rewards Policy. Material changes will be shown in the app before they take effect."
+        }
+      ]
+    }
+  },
+  "firebase": {
+    "apiKey": "AIzaSyCfJlwGGgaZaY18EbBFXmR1zXwVGl8YbhE",
+    "authDomain": "striderewards.firebaseapp.com",
+    "projectId": "striderewards",
+    "appId": "1:913514629716:web:c8caac316b0324405e3bc1"
+  }
+}
