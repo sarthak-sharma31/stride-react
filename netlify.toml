@@ -3,12 +3,13 @@
   command = "node scripts/write-release.mjs && npx vite build"
   publish = "dist"
 
-[[headers]]
-  for = "/download/*.apk"
-  [headers.values]
-    Content-Type = "application/vnd.android.package-archive"
-    Content-Disposition = "attachment; filename=StrideRewards.apk"
-    Cache-Control = "no-cache"
+# The APK is hosted on GitHub Releases, so downloads don't use this site's bandwidth. The old
+# link redirects there for build 8's updater and links shared earlier.
+[[redirects]]
+  from = "/download/StrideRewards.apk"
+  to = "https://github.com/sarthak-sharma31/stride-react/releases/download/build-9/StrideRewards.apk"
+  status = 302
+  force = true
 
 [[headers]]
   for = "/download/latest.json"
