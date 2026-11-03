@@ -95,17 +95,42 @@
     }
   ],
   "rules": {
-    "dailyCap": 300,
+    "dailyCap": 500,
     "milestonesPerDay": 15,
     "milestonePoints": [
       1,
       8
     ],
     "bonusPoints": [
-      4,
-      10
+      6,
+      15
     ],
     "habits": 5
+  },
+  "sleep": {
+    "pointsPerHour": 6,
+    "maxHours": 8,
+    "milestoneHours": [
+      0,
+      2,
+      4,
+      6,
+      8
+    ],
+    "milestonePoints": [
+      1,
+      8
+    ]
+  },
+  "dailyLogin": {
+    "basePoints": 5,
+    "stepPoints": 3,
+    "maxPoints": 50
+  },
+  "gifts": {
+    "maxPerDay": 5,
+    "minPoints": 8,
+    "maxPoints": 25
   },
   "referral": {
     "referrerPoints": 50,
@@ -126,7 +151,15 @@
         },
         {
           "heading": "How points are earned",
-          "body": "Points are awarded for reaching step milestones, bonus boxes, healthy habits, challenges and qualifying referrals. Values, milestones and limits are published in the app and may change."
+          "body": "Points are awarded for reaching step milestones, bonus boxes, healthy habits, sleep rewards, the daily login bonus, optional gifts, challenges and qualifying referrals. Values, milestones and limits are published in the app and may change."
+        },
+        {
+          "heading": "Sleep rewards",
+          "body": "When you save a bedtime, sleep points build from that time at the published hourly rate, up to a nightly maximum, until you tap Wake up. Sleep is not measured: points are based on the time since your bedtime. A new bedtime counts from its next occurrence, and unclaimed points for a night end when the next one begins. Points from patterns that suggest abuse may be withheld or reversed."
+        },
+        {
+          "heading": "Daily login bonus",
+          "body": "You can collect one login bonus per day. It grows for each day in a row you collect it and starts again after a missed day."
         },
         {
           "heading": "Limits and budget",
@@ -134,7 +167,7 @@
         },
         {
           "heading": "Random rewards",
-          "body": "Each step milestone and bonus box awards a random number of points within the published range, decided by our server when you claim. Claiming requires an internet connection. Points obtained through tampering, automation, emulators, multiple accounts or other abuse may be withheld or reversed."
+          "body": "Step milestones, sleep milestones, bonus boxes, habit rounds and gifts award a random number of points within the published range, decided by our server when you claim. Claiming requires an internet connection. Points obtained through tampering, automation, emulators, multiple accounts or other abuse may be withheld or reversed."
         },
         {
           "heading": "Redemption",
@@ -146,7 +179,7 @@
         },
         {
           "heading": "Ad-unlocked rewards",
-          "body": "Habit rounds and bonus boxes are unlocked by watching a rewarded ad to the end. If no ad is available, try again later; the reward stays waiting for you that day."
+          "body": "Habit rounds, bonus boxes, a night’s sleep points and gifts are unlocked by watching an ad. Most need a rewarded ad watched to the end; a bottle flip may show either a rewarded or a regular ad. Gifts are optional and can be skipped. If no ad is available, try again later."
         },
         {
           "heading": "No guaranteed earnings",
@@ -163,7 +196,7 @@
         },
         {
           "heading": "Activity data",
-          "body": "Daily step totals read from your phone’s step counter with the Physical activity permission. We do not collect location, routes, heart rate or other health records. Optional height, weight and stride are used only for estimates."
+          "body": "Daily step totals read from your phone’s step counter with the Physical activity permission, plus what you log in the app: water amounts, completed habits, your saved bedtime and when you tap Wake up. Squats are counted with the motion sensor on your phone; that motion data stays on the phone. We do not collect location, routes, heart rate or other health records. Optional height, weight and stride are used only for estimates."
         },
         {
           "heading": "Rewards data",
@@ -172,6 +205,14 @@
         {
           "heading": "Advertising",
           "body": "The app shows ads from Unity Ads, including optional rewarded videos that unlock habit rounds and bonus boxes. If you allow personalised ads, Unity may use your device’s advertising ID to show more relevant ads; if not, you still see ads, but they are not personalised. Change this any time in Settings → Privacy & data. We never reward clicking on ads."
+        },
+        {
+          "heading": "Emails",
+          "body": "We send account and reward emails, such as verification, password reset, request updates and gift codes, through our email provider Resend, which receives the address and the email content to deliver them."
+        },
+        {
+          "heading": "Reminders and diagnostics",
+          "body": "Reminders, such as sleep reminders, are scheduled on your phone and can be turned off in Settings → Notifications. When something goes wrong, the app sends an error report with the error text, app version, device model and Android version, without your name or email."
         },
         {
           "heading": "Security signals",
@@ -192,7 +233,7 @@
         },
         {
           "heading": "Fair use",
-          "body": "Do not use devices, scripts, emulators or other methods to simulate steps. We may suspend accounts that violate these rules."
+          "body": "Do not use devices, scripts, emulators or other methods to simulate steps or activity, or to collect rewards you did not earn, including sleep rewards. We may suspend accounts that violate these rules."
         },
         {
           "heading": "Health",

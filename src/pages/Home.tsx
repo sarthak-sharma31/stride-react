@@ -6,7 +6,7 @@ import { Layout, usePageMeta } from '../components/Layout';
 import { Mountain } from '../components/Mountain';
 import { SITE, points, rupees, siteHost } from '../site';
 
-const TICKER = ['Every 500 steps', 'Random points', 'Bonus boxes', 'Healthy habits', 'Real gift cards', 'No GPS tracking', 'Free to use'];
+const TICKER = ['Every 500 steps', 'Random points', 'Sleep rewards', 'Bonus boxes', 'Daily login bonus', 'Healthy habits', 'Real gift cards', 'No GPS tracking', 'Free to use'];
 
 const HABITS: [IconName, string, string, string][] = [
   ['water', 'Drink water', 'Log glasses, then flip the bottle for points', '#2B8CFF'],
@@ -20,15 +20,22 @@ const FAQ = (cap: number, cheapest: { title: string; points: number }): [string,
   ['Is it really free?', 'Yes. StrideRewards is free to download and use. Short ads in the app pay for the gift cards.'],
   [
     'How much can I earn?',
-    `Walk 10,000 steps and do the daily habits and you can earn up to ${cap} points a day, which is the daily limit. At that pace your first ${cheapest.title} card (${points(cheapest.points)} points) is about ${Math.round(cheapest.points / cap / 7)} weeks away. Points are a bonus for staying active, not a salary.`,
+    `Walk 10,000 steps, do the daily habits, sleep and come back every day and you can earn up to ${cap} points a day, which is the daily limit. At that pace your first ${cheapest.title} card (${points(cheapest.points)} points) is about ${Math.round(cheapest.points / cap / 7)} weeks away. Points are a bonus for staying active, not a salary.`,
   ],
   ['Does it drain my battery or track my location?', 'No. It reads your phone’s low-power step sensor. There’s no GPS, and we never collect your location or routes.'],
   ['Why isn’t it on the Play Store?', 'We publish it directly on this website for now. The app is signed, and every update comes from this page.'],
   ['How do I get my gift card?', 'Open Wallet, pick a card and enter your email. We check the request by hand and email the code, usually within 3 working days. If a request is declined, your points come back.'],
   ['Can I use it outside India?', 'You can walk and collect points anywhere. Gift cards are India-only for now, and more countries are coming.'],
-  ['How do I update the app?', 'When a new version is out, the app tells you and brings you back to this page. Download it and install it over the old one. Your points and progress stay as they are.'],
+  [
+    'Do I really get points for sleeping?',
+    'Yes. Save your bedtime and points build from that time while you sleep. In the morning, tap Wake up and collect them. The app doesn’t measure your sleep, it just counts the hours from your bedtime, so please play fair.',
+  ],
+  ['How do I update the app?', 'When a new version is out, the app tells you. Tap Download and Android installs it over the old one, or download it again from this page. Your points and progress stay as they are.'],
   ['What about iPhone?', 'StrideRewards is Android-only for now.'],
 ];
+
+/** [2, 4, 6, 8] → "2, 4, 6 and 8". */
+const listJoin = (items: number[]) => (items.length > 1 ? `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}` : items.join(''));
 
 function Hl({ children }: { children: string }) {
   return <span className="hl">{children}</span>;
@@ -36,7 +43,7 @@ function Hl({ children }: { children: string }) {
 
 export function Home() {
   usePageMeta('StrideRewards: walk more, earn gift cards');
-  const { rules, referral: r, redemption: rd, catalog } = SITE;
+  const { rules, referral: r, redemption: rd, catalog, sleep: sl, dailyLogin: dl, gifts: gf } = SITE;
   const cheapest = catalog.reduce((a, b) => (b.points < a.points ? b : a));
   const prices = [...new Map(catalog.map((c) => [c.valueMinor, c.points])).entries()].sort((a, b) => a[0] - b[0]);
 
@@ -206,6 +213,30 @@ export function Home() {
                 <span>{text}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="daily">
+        <div className="wrap">
+          <div className="head">
+            <span className="eyebrow">Every day</span>
+            <h2>
+              A reason to come <Hl>back daily</Hl>.
+            </h2>
+            <p className="muted">Even on days you don’t walk much, there are points waiting.</p>
+          </div>
+          <div className="grid3">
+            <Step icon="moon" title="Sleep rewards">
+              Set your bedtime and earn {sl.pointsPerHour} points an hour while you sleep, up to {sl.pointsPerHour * sl.maxHours} a night. Free milestones at bedtime and at {listJoin(sl.milestoneHours.filter((h) => h > 0))} hours add{' '}
+              {sl.milestonePoints[0]} to {sl.milestonePoints[1]} points each.
+            </Step>
+            <Step icon="calendar" title="Daily login bonus">
+              Open the app every day for a bigger reward. It starts at {dl.basePoints} points and grows by {dl.stepPoints} each day in a row, up to {dl.maxPoints}. Miss a day and it starts again.
+            </Step>
+            <Step icon="gift" title="Surprise gifts">
+              Up to {gf.maxPerDay} gifts pop up each day as you use the app. Watch a short ad to open one for {gf.minPoints} to {gf.maxPoints} points, or skip it. It’s always your choice.
+            </Step>
           </div>
         </div>
       </section>

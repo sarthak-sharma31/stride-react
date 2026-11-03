@@ -8,7 +8,7 @@ import path from 'node:path';
 
 // Manual refresh only (not part of the build): needs the app repo checked out next to this folder.
 const APP = process.env.APP_DIR ?? path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', 'Stride-rewards-app');
-const { DEFAULT_CATALOG, DEFAULT_PUBLIC_CONFIG, DEFAULT_RULES } = await import(path.join(APP, 'serverless/src/config/defaults.ts'));
+const { DEFAULT_CATALOG, DEFAULT_DAILY_LOGIN, DEFAULT_GIFTS, DEFAULT_PUBLIC_CONFIG, DEFAULT_RULES, DEFAULT_SLEEP } = await import(path.join(APP, 'serverless/src/config/defaults.ts'));
 const { POLICIES } = await import(path.join(APP, 'src/constants/policies.ts'));
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -26,6 +26,9 @@ const data = {
     bonusPoints: [DEFAULT_RULES.bonus.minPoints, DEFAULT_RULES.bonus.maxPoints],
     habits: DEFAULT_RULES.habits?.length ?? 0,
   },
+  sleep: (({ pointsPerHour, maxHours, milestoneHours, milestonePoints }) => ({ pointsPerHour, maxHours, milestoneHours, milestonePoints: [milestonePoints.minPoints, milestonePoints.maxPoints] }))(DEFAULT_RULES.sleep ?? DEFAULT_SLEEP),
+  dailyLogin: DEFAULT_RULES.dailyLogin ?? DEFAULT_DAILY_LOGIN,
+  gifts: DEFAULT_RULES.gifts ?? DEFAULT_GIFTS,
   referral: DEFAULT_PUBLIC_CONFIG.referral,
   redemption: DEFAULT_PUBLIC_CONFIG.redemption,
   policies: POLICIES,
